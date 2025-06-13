@@ -1,0 +1,298 @@
+/* Existing styles */
+.manageStoriesBackground {
+    background: #86469C;
+    background: linear-gradient(0deg, rgba(134, 70, 156, 1) 0%, rgba(251, 154, 209, 1) 50%, rgb(250, 97, 148) 100%);
+    min-height: 100vh; /* Changed from height to min-height */
+    width: 100%;
+    /* Removed background-repeat: no-repeat to allow natural extension */
+}
+
+.navStories {
+    margin: 20px 0;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    padding: 25px;
+}
+
+.navStories ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.navStories li a {
+    color: black;
+    text-decoration: none;
+    border-radius: 2;
+    transition: background-color 0.3s;
+}
+
+.navStories li a:hover,
+.navStories li a.active {
+    background-color: rgba(251, 154, 209, 1);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(134, 70, 156, 0.08);
+}
+
+/* New moderation styles */
+.contentContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.sectionTitle {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.storiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.storyCard {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.storyCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.storyHeader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.storyTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+    margin-right: 10px;
+    display: none; /* Hide title since we're only showing story text */
+}
+
+.statusBadge {
+    background: #ffa500;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.statusBadge.approved {
+    background: #28a745;
+}
+
+.storyContent {
+    margin-bottom: 15px;
+}
+
+.storyText {
+    color: #252525;
+    text-align: justify;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.submissionDate {
+    color: #999;
+    font-size: 12px;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.approveButton {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.approveButton:hover {
+    background: #218838;
+}
+
+.rejectButton {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.rejectButton:hover {
+    background: #c82333;
+}
+
+.deleteButton {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+    background: #c82333;
+}
+
+.emptyMessage {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-style: italic;
+    grid-column: 1 / -1;
+    padding: 40px 20px;
+}
+
+.logoutButton {
+    position: fixed; /* Fixed positioning */
+    top: 1.5rem; /* Distance from the top */
+    right: 1.5rem; /* Distance from the right */
+    background: #fa6194; /* Red color for logout */
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+    user-select: none;
+    z-index: 1000; /* Ensure it is on top */
+}
+
+.logoutButton:hover {
+    background: #c13c6e;
+}
+
+.fullStory {
+  background-color: white;
+  color: #007bff; 
+  cursor: pointer;
+  text-decoration: underline;
+  border: none;
+}
+
+.fullStory:hover {
+  color: #0056b3; 
+}
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Ensure it is above other content */
+}
+
+.modalContent {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modalTitle {
+    font-style: italic;
+    text-decoration: underline;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: black;
+}
+
+.modalBody {
+    margin-top: 10px;
+    color: black;
+    line-height: 1.5;
+}
+
+.storyBox {
+    border: black solid 2px;
+    padding: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.storyBox p {
+    text-align: justify;
+}
+
+.fullStoryExtra {
+    color: #666;
+    font-size: 14px;
+}
+
+.printReportButton {
+    margin-top: 50px;
+    background: #d4d4d4;
+    padding: 8px;
+    border-radius: 2px;
+    border: black 1px solid;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.printReportButton:hover {
+    background: #f0f0f0;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #dc3545; /* Red color for close button */
+}
